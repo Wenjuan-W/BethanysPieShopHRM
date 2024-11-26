@@ -1,3 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using BethanysPieShopHRM;
 
+Console.WriteLine("Welcome to Bethany's Pie Shop HRM");
+
+
+
+Console.ReadLine();
