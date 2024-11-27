@@ -1,5 +1,6 @@
 ﻿using System;
-namespace BethanysPieShopHRM
+
+namespace BethanysPieShopHRM.HR
 {
     enum EmployeeType
     {
