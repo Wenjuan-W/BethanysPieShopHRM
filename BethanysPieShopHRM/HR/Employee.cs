@@ -1,4 +1,6 @@
-﻿using System;
+﻿//using BethanysPieShopHRM.Logic;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,20 +16,22 @@ namespace BethanysPieShopHRM.HR
 
         public int numberOfHoursWorked;
         public double wage;
-        public double hourlyRate;
+        public double? hourlyRate;
         public EmployeeType employeeType;
 
         public DateTime birthDay;
 
         const int minimalHoursWorkedUnit = 1;
 
-        public Employee(string first, string last, string em, DateTime bd, double rate, EmployeeType empType)
+        public static double taxRate = 0.15;
+
+        public Employee(string first, string last, string em, DateTime bd, double? rate, EmployeeType empType)
         {
             firstName = first;
             lastName = last;
             email = em;
             birthDay = bd;
-            hourlyRate = rate;
+            hourlyRate = rate ?? 10;
             employeeType = empType;
         }
 
@@ -92,15 +96,21 @@ namespace BethanysPieShopHRM.HR
 
         public double ReceiveWage(bool resetHours = true)
         {
+            double wageBeforeTax = 0.0;
+
             if (employeeType == EmployeeType.Manager)
             {
                 Console.WriteLine($"An extra was added to the wage since {firstName} is a manager!");
-                wage = numberOfHoursWorked * hourlyRate * 1.25;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate.Value * 1.25;
             }
             else
             {
-                wage = numberOfHoursWorked * hourlyRate;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate.Value;
             }
+
+            double taxAmount = wageBeforeTax * taxRate;
+
+            wage = wageBeforeTax - taxAmount;
 
             Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {numberOfHoursWorked} hour(s) of work.");
 
@@ -110,10 +120,31 @@ namespace BethanysPieShopHRM.HR
             return wage;
         }
 
+        //public double CalculateWage()
+        //{
+        //    WageCalculations wageCalculations = new WageCalculations();
+
+        //    double calculateValue = wageCalculations.ComplexWageCalculation(wage, taxRate, 3, 42);
+
+        //    return calculateValue;
+
+        //}
+
+        public string ConvertToJson()
+        {
+            string json = JsonConvert.SerializeObject(this);
+
+            return json;
+        }
+
+        public static void DisplayTaxRate()
+        {
+            Console.WriteLine($"The current tax rate is {taxRate}");
+        }
+
         public void DisplayEmployeeDetails()
         {
-            Console.WriteLine($"\nFirst name: \t{firstName}\nLast name: \t{lastName}\nEmail: \t\t{email}\nBirthday: \t{birthDay.ToShortDateString()}\n");
+            Console.WriteLine($"\nFirst name: \t{firstName}\nLast name: \t{lastName}\nEmail: \t\t{email}\nBirthday: \t{birthDay.ToShortDateString()}\nTax rate: \t{taxRate}");
         }
     }
 }
-
