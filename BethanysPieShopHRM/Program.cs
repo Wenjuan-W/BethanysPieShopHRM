@@ -1,27 +1,62 @@
-﻿
-using BethanysPieShopHRM;
+﻿using BethanysPieShopHRM.HR;
 
-Console.WriteLine("Welcome to Bethany's Pie Shop HRM");
+Console.WriteLine("Creating an employee");
+Console.WriteLine("--------------------\n");
 
-//int amount = 1234;
-//int months = 12;
-//int bonus = 1000;
+//Employee bethany = new Employee("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25, EmployeeType.Manager);
 
-//int yearlyWage = Utilities.CalculateYearlyWage(amount, months);
-//int yearlyWageWithBonus = Utilities.CalculateYearlyWage(amount, months, bonus);
-
-//Console.WriteLine($"Yearly wage: {yearlyWage}");
+//Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
 
 
-//double amountDouble = 1500.0;
-//double monthsDouble = 12;
-//double bonusDouble = 1000;
+//#region First run Bethany
 
-//double yearlyWageWithBonusDouble = Utilities.CalculateYearlyWage(amountDouble, monthsDouble, bonusDouble);
+//bethany.PerformWork();
+//bethany.PerformWork(5);
+//bethany.PerformWork();
+//bethany.ReceiveWage();
+//bethany.DisplayEmployeeDetails();
+
+//#endregion
 
 
-Utilities.UsingOptionalParameters();
+//#region First run George
 
-Utilities.UsingNamedArguments();
+//george.PerformWork(10);
+//george.PerformWork();
+//george.PerformWork();
+//george.ReceiveWage();
+//george.DisplayEmployeeDetails();
 
-Console.ReadLine();
+//#endregion
+
+//Employee.taxRate = 0.02;//woohoo, less money to pay
+//Employee.DisplayTaxRate();
+
+
+//#region Second run Bethany
+
+//bethany.PerformWork();
+//bethany.PerformWork();
+//bethany.PerformWork();
+//bethany.PerformWork();
+//bethany.PerformWork();
+//bethany.PerformWork();
+//bethany.ReceiveWage();
+//bethany.DisplayEmployeeDetails();
+
+//#endregion
+
+//#region Second run George
+
+//george.PerformWork();
+//george.PerformWork();
+//george.PerformWork();
+//george.ReceiveWage();
+//george.DisplayEmployeeDetails();
+
+//#endregion
+
+//Employee.DisplayTaxRate();
+
+//double calculatedWage = bethany.CalculateWage();
+//Console.WriteLine($"The estimated wage is {calculatedWage}.");
