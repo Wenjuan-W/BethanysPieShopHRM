@@ -6,66 +6,22 @@ namespace BethanysPieShopHRM.HR
 {
     public class Employee : IEmployee
     {
-        private string firstName;
-        private string lastName;
-        private string email;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
 
-        private int numberOfHoursWorked;
-        private double wage;
+        public int NumberOfHoursWorked { get; set; }
+        public double Wage { get; set; }
         private double? hourlyRate;
 
-        private DateTime birthDay;
+        public DateTime BirthDay { get; set; }
+        public Address Address { get; set; }
+
         private const int minimalHoursWorkedUnit = 1;
-
-        private Address address;
-
         public static double taxRate = 0.15;
 
-        public string FirstName
-        {
-            get { return firstName; }
-            set
-            {
-                firstName = value;
-            }
-        }
-
-        public string LastName
-        {
-            get { return lastName; }
-            set
-            {
-                lastName = value;
-            }
-        }
-
-        public string Email
-        {
-            get { return email; }
-            set
-            {
-                email = value;
-            }
-        }
-
-        public int NumberOfHoursWorked
-        {
-            get { return numberOfHoursWorked; }
-            protected set
-            {
-                numberOfHoursWorked = value;
-            }
-        }
-
-        public double Wage
-        {
-            get { return wage; }
-            private set
-            {
-                wage = value;
-            }
-        }
-
+        
+        
         public double? HourlyRate
         {
             get { return hourlyRate; }
@@ -80,24 +36,6 @@ namespace BethanysPieShopHRM.HR
                     hourlyRate = value;
 
                 }
-            }
-        }
-
-        public DateTime BirthDay
-        {
-            get { return birthDay; }
-            set
-            {
-                birthDay = value;
-            }
-        }
-
-        public Address Address
-        {
-            get { return address; }
-            set
-            {
-                address = value;
             }
         }
 
