@@ -8,18 +8,8 @@ namespace BethanysPieShopHRM.HR
         {
         }
 
-        private int numberOfPieTastesInvented = 0;
-        public int NumberOfPieTastesInvented
-        {
-            get
-            {
-                return numberOfPieTastesInvented;
-            }
-            private set
-            {
-                numberOfPieTastesInvented = value;
-            }
-        }
+        public int NumberOfPieTastesInvented = 0;
+        
 
         public void ResearchNewPieTastes(int researchHours)
         {
