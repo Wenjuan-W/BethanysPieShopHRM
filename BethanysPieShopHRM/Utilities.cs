@@ -8,6 +8,37 @@ namespace BethanysPieShopHRM
         private static string directory = @"D:\data\BethanysPieShopHRM\";
         private static string fileName = "employees.txt";
 
+
+        internal static void CheckForExistingEmployeeFile()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            string path = $"{directory}{fileName}";
+
+            bool existingFileFound = File.Exists(path);
+            if (existingFileFound)
+            {
+                Console.WriteLine("An existing file with Employee data is found.");
+            }
+            else
+            {
+                //Create the airectory already
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(directory);
+                Console.WriteLine("Directory is ready for saving files.");
+            }
+            Console.ForegroundColor = ConsoleColor.Blue;
+
+        }
+
+        internal static void ViewAllEmployees(List<Employee> employees)
+        {
+            for (int i = 0; i < employees.Count; i++)
+            {
+                employees[i].DisplayEmployeeDetails();
+            }
+        }
+
         internal static void LoadEmployees(List<Employee> employees)
         {
             string path = $"{directory}{fileName}";
