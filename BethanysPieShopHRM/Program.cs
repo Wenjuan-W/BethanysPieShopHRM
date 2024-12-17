@@ -35,16 +35,16 @@ do
     switch (userSelection)
     {
         case "1":
-            Utilities.RegisterEmployee(employees);
+            //Utilities.RegisterEmployee(employees);
             break;
         case "2":
-            Utilities.ViewAllEmployees(employees);
+            //Utilities.ViewAllEmployees(employees);
             break;
         case "3":
-            Utilities.SaveEmployees(employees);
+            //Utilities.SaveEmployees(employees);
             break;
         case "4":
-            Utilities.LoadEmployees(employees);
+            //Utilities.LoadEmployees(employees);
             break;
         case "9": break;
         default:
