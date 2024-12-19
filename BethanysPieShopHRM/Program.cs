@@ -10,7 +10,7 @@ Console.WriteLine("* Bethany's Pie Shop Employee App *");
 Console.WriteLine("***********************************");
 Console.ForegroundColor = ConsoleColor.White;
 
-string userSelection;
+string userSelection = "";
 Console.ForegroundColor = ConsoleColor.Blue;
 
 do
@@ -45,6 +45,9 @@ do
             break;
         case "4":
             Utilities.LoadEmployees(employees);
+            break;
+        case "5":
+            Utilities.LoadEmployeeById(employees);
             break;
         case "9": break;
         default:
