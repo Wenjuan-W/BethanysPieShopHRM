@@ -227,6 +227,7 @@ namespace BethanysPieShopHRM
             Console.ResetColor();
         }
 
+        // To-do: improve it to use enum or other options
         private static string GetEmployeeType(Employee employee)
         {
             if (employee is Manager)

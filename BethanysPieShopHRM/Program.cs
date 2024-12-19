@@ -51,6 +51,7 @@ do
             break;
         case "9": break;
         default:
+            // when user enters something that's not on the menu
             Console.WriteLine("Invalid selection. Please try again.");
             break;
     }
