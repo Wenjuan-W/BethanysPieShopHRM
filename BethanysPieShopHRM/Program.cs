@@ -4,6 +4,7 @@ using BethanysPieShopHRM.HR;
 
 List<Employee> employees = new List<Employee>();
 
+// init the input
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("***********************************");
 Console.WriteLine("* Bethany's Pie Shop Employee App *");
@@ -23,6 +24,7 @@ do
     Console.WriteLine("* Select an action *");
     Console.WriteLine("********************");
 
+    // user selects an action 
     Console.WriteLine("1: Register employee");
     Console.WriteLine("2: View all employees");
     Console.WriteLine("3: Save data");
