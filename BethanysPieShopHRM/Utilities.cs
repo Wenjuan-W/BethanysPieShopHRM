@@ -173,7 +173,7 @@ namespace BethanysPieShopHRM
             catch (IndexOutOfRangeException iex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Something went wrong parsing the file, please check the data!");
+                Console.WriteLine("Index out of the range, please check the data!");
                 Console.WriteLine(iex.Message);
                 //Console.ResetColor();
             }
